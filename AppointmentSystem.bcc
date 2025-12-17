@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xcontext.base">
+    <org.eventb.core.scCarrierSet name="TREATMENT_TYPE" org.eventb.core.source="/DentistAppointmentSystemFinal/AppointmentSystem.buc|org.eventb.core.contextFile#AppointmentSystem|org.eventb.core.carrierSet#_y9W-4A6_Ee-t4pcCB38aNA" org.eventb.core.type="ℙ(TREATMENT_TYPE)"/>
+    <org.eventb.core.scCarrierSet name="NHS_NUMBER" org.eventb.core.source="/DentistAppointmentSystemFinal/AppointmentSystem.buc|org.eventb.core.contextFile#AppointmentSystem|org.eventb.core.carrierSet#_y9W-4g6_Ee-t4pcCB38aNA" org.eventb.core.type="ℙ(NHS_NUMBER)"/>
+    <org.eventb.core.scCarrierSet name="USER" org.eventb.core.source="/DentistAppointmentSystemFinal/AppointmentSystem.buc|org.eventb.core.contextFile#AppointmentSystem|org.eventb.core.carrierSet#_y9VwwA6_Ee-t4pcCB38aNA" org.eventb.core.type="ℙ(USER)"/>
+    <org.eventb.core.scCarrierSet name="TREATMENTS" org.eventb.core.source="/DentistAppointmentSystemFinal/AppointmentSystem.buc|org.eventb.core.contextFile#AppointmentSystem|org.eventb.core.carrierSet#_y9WX0Q6_Ee-t4pcCB38aNA" org.eventb.core.type="ℙ(TREATMENTS)"/>
+    <org.eventb.core.scCarrierSet name="PASSWORD" org.eventb.core.source="/DentistAppointmentSystemFinal/AppointmentSystem.buc|org.eventb.core.contextFile#AppointmentSystem|org.eventb.core.carrierSet#_y9W-4Q6_Ee-t4pcCB38aNA" org.eventb.core.type="ℙ(PASSWORD)"/>
+    <org.eventb.core.scCarrierSet name="APPOINTMENT" org.eventb.core.source="/DentistAppointmentSystemFinal/AppointmentSystem.buc|org.eventb.core.contextFile#AppointmentSystem|org.eventb.core.carrierSet#_y9WX0A6_Ee-t4pcCB38aNA" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+</org.eventb.core.scContextFile>

@@ -1,0 +1,115 @@
+machine AppointmentSystem_Refined
+refines AppointmentSystem
+sees AppointmentSystem
+
+variables
+	time
+	users
+	administrators
+	dentists
+	patients
+	patient_nhsnumber
+	registered_nhsnumbers
+	appointments
+	appointment_time
+	appointment_treatment
+	appointment_patient
+	appointment_dentist
+	dentist_treatments
+	booked_appointments
+	completed_appointments
+	missed_appointments
+	checked_in_appointments
+	logged_in
+	appointments_viewing
+	treatments_viewing
+	
+	// Refined variables
+	user_password_relations
+invariants
+	// Refined invariants
+	@inv28: user_password_relations ∈ users → PASSWORD
+	
+events
+	event INITIALISATION extends INITIALISATION
+	then
+		// Extended initialisation
+		@init_passwords: user_password_relations  ≔ ∅
+	end
+
+	// REQ2: The system should only allow a user to log in to the system using the correct password.
+	// Extended event
+	event login extends login
+	any password where
+		@ref_grd1: password ∈ PASSWORD
+		@ref_grd2: user_password_relations(user) = password
+	end
+
+	event logout extends logout
+	end
+
+	event viewAppointments_AdminDentist extends viewAppointments_AdminDentist
+	end
+
+	event viewCompletedTreatments_Patient extends viewCompletedTreatments_Patient
+	end
+
+	// Extended event
+	event addFirstUser extends addFirstUser
+	any password where
+		@ref_grd1: password ∈ PASSWORD
+	then
+		@ref_act1: user_password_relations(new_user) ≔ password
+	end
+
+	// Extended event
+	event registerAdministrator extends registerAdministrator
+	any password where
+		@ref_grd1: password ∈ PASSWORD
+	then
+		@ref_act1: user_password_relations(user) ≔ password
+	end
+
+	// Extended event
+	event registerDentist extends registerDentist
+	any password where
+		@ref_grd1: password ∈ PASSWORD
+	then
+		@ref_act1: user_password_relations(user) ≔ password
+	end
+
+	// Extended event
+	event registerPatient extends registerPatient
+	any password where
+		@ref_grd1: password ∈ PASSWORD
+	then
+		@ref_act1: user_password_relations(user) ≔ password
+	end
+
+	event check_in_to_Appointment extends check_in_to_Appointment
+	end
+
+	event complete_Appointment extends complete_Appointment
+	end
+
+	event missed_Appointment extends missed_Appointment
+	end
+
+	event Patient_BookAppointment extends Patient_BookAppointment
+	end
+
+	event Patient_CancelAppointment extends Patient_CancelAppointment
+	end
+
+	event Patient_RebookAppointment extends Patient_RebookAppointment
+	end
+
+	event Tick_Clock extends Tick_Clock
+	end
+	
+	
+	event trainDentist extends trainDentist
+	end
+
+
+end

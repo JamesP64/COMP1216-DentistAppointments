@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xmachine.base" org.eventb.core.generated="false" version="5">
+    <org.eventb.core.seesContext name="_eJ2hcA7EEe-t4pcCB38aNA" org.eventb.core.target="AppointmentSystem"/>
+    <org.eventb.core.variable name="_eJ2hcQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="time"/>
+    <org.eventb.core.variable name="_eJ2hcg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="users"/>
+    <org.eventb.core.variable name="_eJ2hcw7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="administrators"/>
+    <org.eventb.core.variable name="_eJ3IgA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="dentists"/>
+    <org.eventb.core.variable name="_eJ3IgQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="patients"/>
+    <org.eventb.core.variable name="_eJ3Igg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="patient_nhsnumber"/>
+    <org.eventb.core.variable name="_eJ3Igw7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="registered_nhsnumbers"/>
+    <org.eventb.core.variable name="_eJ3IhA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="appointments"/>
+    <org.eventb.core.variable name="_eJ3vkA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="appointment_time"/>
+    <org.eventb.core.variable name="_eJ3vkQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="appointment_treatment"/>
+    <org.eventb.core.variable name="_eJ3vkg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="appointment_patient"/>
+    <org.eventb.core.variable name="_eJ3vkw7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="appointment_dentist"/>
+    <org.eventb.core.variable name="_eJ4WoA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="dentist_treatments"/>
+    <org.eventb.core.variable name="_eJ4WoQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="booked_appointments"/>
+    <org.eventb.core.variable name="_eJ4Wog7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="completed_appointments"/>
+    <org.eventb.core.variable name="_eJ4Wow7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="missed_appointments"/>
+    <org.eventb.core.variable name="_eJ49sA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="checked_in_appointments"/>
+    <org.eventb.core.variable name="_eJ49sQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="logged_in"/>
+    <org.eventb.core.variable name="_eJ49sg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="appointments_viewing"/>
+    <org.eventb.core.variable name="_eJ49sw7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="treatments_viewing"/>
+    <org.eventb.core.invariant name="_eJ49tA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="inv1" org.eventb.core.predicate="users ⊆ USER"/>
+    <org.eventb.core.invariant name="_eJ5kwA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="inv2" org.eventb.core.predicate="administrators ⊆ users"/>
+    <org.eventb.core.invariant name="_eJ5kwQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="inv3" org.eventb.core.predicate="dentists ⊆ users"/>
+    <org.eventb.core.invariant name="_eJ5kwg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="inv4" org.eventb.core.predicate="patients ⊆ users"/>
+    <org.eventb.core.invariant name="_eJ5kww7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="inv8" org.eventb.core.predicate="registered_nhsnumbers ⊆ NHS_NUMBER"/>
+    <org.eventb.core.invariant name="_eJ6L0A7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="inv5" org.eventb.core.predicate="partition(users, administrators, dentists, patients)"/>
+    <org.eventb.core.invariant name="_eJ6L0Q7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="inv9" org.eventb.core.predicate="patient_nhsnumber ∈ patients ↣ registered_nhsnumbers"/>
+    <org.eventb.core.invariant name="_eJ6L0g7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="inv_time" org.eventb.core.predicate="time ∈ ℕ"/>
+    <org.eventb.core.invariant name="_eJ6y4A7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="loggedin" org.eventb.core.predicate="logged_in ⊆ users"/>
+    <org.eventb.core.invariant name="_eJ6y4Q7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="int10" org.eventb.core.predicate="appointments ⊆ APPOINTMENT"/>
+    <org.eventb.core.invariant name="_eJ7Z8A7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="inv11" org.eventb.core.predicate="booked_appointments ⊆ appointments"/>
+    <org.eventb.core.invariant name="_eJ7Z8Q7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="inv12" org.eventb.core.predicate="checked_in_appointments ⊆ appointments"/>
+    <org.eventb.core.invariant name="_eJ7Z8g7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="inv13" org.eventb.core.predicate="completed_appointments ⊆ appointments"/>
+    <org.eventb.core.invariant name="_eJ7Z8w7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="inv14" org.eventb.core.predicate="missed_appointments ⊆ appointments"/>
+    <org.eventb.core.invariant name="_eJ8BAA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="inv_appointmentPartition" org.eventb.core.predicate="partition(appointments, booked_appointments, checked_in_appointments, completed_appointments, missed_appointments)"/>
+    <org.eventb.core.invariant name="_eJ8oEA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="inv_appointment_time" org.eventb.core.predicate="appointment_time ∈ appointments → ℕ"/>
+    <org.eventb.core.invariant name="_eJ8oEQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="inv_appointment_treatment" org.eventb.core.predicate="appointment_treatment ∈ appointments → TREATMENT_TYPE"/>
+    <org.eventb.core.invariant name="_eJ8oEg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="appointment_patients" org.eventb.core.predicate="appointment_patient ∈ appointments → patients"/>
+    <org.eventb.core.invariant name="_eJ9PIA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="appointment_dentists" org.eventb.core.predicate="appointment_dentist ∈ appointments → dentists"/>
+    <org.eventb.core.invariant name="_eJ9PIQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="dentist_time" org.eventb.core.predicate="∀dentist · dentist ∈ dentists ⇒ card(appointment_dentist∼[{dentist}] ◁ appointment_time) = card(appointment_time[appointment_dentist∼[{dentist}]])"/>
+    <org.eventb.core.invariant name="_eJ92MA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="appointments_currently_viewed" org.eventb.core.predicate="appointments_viewing ⊆ appointments"/>
+    <org.eventb.core.invariant name="_eJ92MQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="treatments_currently_viewed" org.eventb.core.predicate="treatments_viewing ∈ TREATMENT_TYPE ↔ ℕ"/>
+    <org.eventb.core.invariant name="_eJ92Mg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="dentist_qualified" org.eventb.core.predicate="dentist_treatments ∈ dentists ↔ TREATMENT_TYPE"/>
+    <org.eventb.core.event name="_eJ-dQA7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="INITIALISATION">
+        <org.eventb.core.action name="_eJ-dQQ7EEe-t4pcCB38aNA" org.eventb.core.assignment="users ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="ev1"/>
+        <org.eventb.core.action name="_eJ_EUA7EEe-t4pcCB38aNA" org.eventb.core.assignment="administrators ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="ev2"/>
+        <org.eventb.core.action name="_eJ_EUQ7EEe-t4pcCB38aNA" org.eventb.core.assignment="patients ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="ev3"/>
+        <org.eventb.core.action name="_eJ_EUg7EEe-t4pcCB38aNA" org.eventb.core.assignment="dentists ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="ev4"/>
+        <org.eventb.core.action name="_eJ_EUw7EEe-t4pcCB38aNA" org.eventb.core.assignment="patient_nhsnumber ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="ev5"/>
+        <org.eventb.core.action name="_eJ_EVA7EEe-t4pcCB38aNA" org.eventb.core.assignment="appointments ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init_appointment"/>
+        <org.eventb.core.action name="_eKAScA7EEe-t4pcCB38aNA" org.eventb.core.assignment="booked_appointments ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="act7"/>
+        <org.eventb.core.action name="_eKAScQ7EEe-t4pcCB38aNA" org.eventb.core.assignment="checked_in_appointments ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="act8"/>
+        <org.eventb.core.action name="_eKAScg7EEe-t4pcCB38aNA" org.eventb.core.assignment="missed_appointments ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="act9"/>
+        <org.eventb.core.action name="_eKA5gA7EEe-t4pcCB38aNA" org.eventb.core.assignment="completed_appointments ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="act10"/>
+        <org.eventb.core.action name="_eKA5gQ7EEe-t4pcCB38aNA" org.eventb.core.assignment="appointment_time ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init_appointment_time"/>
+        <org.eventb.core.action name="_eKA5gg7EEe-t4pcCB38aNA" org.eventb.core.assignment="appointment_treatment ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init_appointment_treatment"/>
+        <org.eventb.core.action name="_eKA5gw7EEe-t4pcCB38aNA" org.eventb.core.assignment="appointment_patient ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init_appointment_patient"/>
+        <org.eventb.core.action name="_eKA5hA7EEe-t4pcCB38aNA" org.eventb.core.assignment="appointment_dentist ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init_appointment_dentist"/>
+        <org.eventb.core.action name="_eKBgkA7EEe-t4pcCB38aNA" org.eventb.core.assignment="dentist_treatments ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init_dentist_treatments"/>
+        <org.eventb.core.action name="_eKBgkQ7EEe-t4pcCB38aNA" org.eventb.core.assignment="logged_in ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init"/>
+        <org.eventb.core.action name="_eKBgkg7EEe-t4pcCB38aNA" org.eventb.core.assignment="appointments_viewing ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init_appointments_viewing"/>
+        <org.eventb.core.action name="_eKBgkw7EEe-t4pcCB38aNA" org.eventb.core.assignment="treatments_viewing ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init_treatments_viewing"/>
+        <org.eventb.core.action name="_eKCHoA7EEe-t4pcCB38aNA" org.eventb.core.assignment="time ≔ 0" org.eventb.core.generated="false" org.eventb.core.label="ev12"/>
+        <org.eventb.core.action name="_eKCHoQ7EEe-t4pcCB38aNA" org.eventb.core.assignment="registered_nhsnumbers ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="act6"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_eKCHog7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="login">
+        <org.eventb.core.parameter name="_eKCusA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="user"/>
+        <org.eventb.core.guard name="_eKCusQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="user ∈ users"/>
+        <org.eventb.core.guard name="_eKCusg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="user ∉ logged_in"/>
+        <org.eventb.core.action name="_eKDVwA7EEe-t4pcCB38aNA" org.eventb.core.assignment="logged_in ≔ logged_in ∪ {user}" org.eventb.core.generated="false" org.eventb.core.label="evn1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_eKDVwQ7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="logout">
+        <org.eventb.core.parameter name="_eKDVwg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="user"/>
+        <org.eventb.core.guard name="_eKD80A7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="user ∈ users"/>
+        <org.eventb.core.guard name="_eKD80Q7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="user ∈ logged_in"/>
+        <org.eventb.core.action name="_eKD80g7EEe-t4pcCB38aNA" org.eventb.core.assignment="logged_in ≔ logged_in ∖ {user}" org.eventb.core.generated="false" org.eventb.core.label="evn1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_eKD80w7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="viewAppointments_AdminDentist">
+        <org.eventb.core.parameter name="_eKEj4A7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="userAdminOrDentist"/>
+        <org.eventb.core.parameter name="_eKEj4Q7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="patientsNhsnumber"/>
+        <org.eventb.core.guard name="_eKEj4g7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="user_loggedin" org.eventb.core.predicate="userAdminOrDentist ∈ logged_in"/>
+        <org.eventb.core.guard name="_eKFK8A7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="user_is_admin_or_dentist" org.eventb.core.predicate="userAdminOrDentist ∈ administrators ∪ dentists"/>
+        <org.eventb.core.guard name="_eKFK8Q7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="patient_is_patient" org.eventb.core.predicate="patientsNhsnumber ∈ NHS_NUMBER"/>
+        <org.eventb.core.action name="_eKFK8g7EEe-t4pcCB38aNA" org.eventb.core.assignment="appointments_viewing ≔ dom(appointment_patient ▷ dom(patient_nhsnumber ▷ {patientsNhsnumber}))" org.eventb.core.generated="false" org.eventb.core.label="ev1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_eKFK8w7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="viewCompletedTreatments_Patient">
+        <org.eventb.core.parameter name="_eKFK9A7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="patient"/>
+        <org.eventb.core.guard name="_eKGZEA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="patient ∈ logged_in"/>
+        <org.eventb.core.guard name="_eKGZEQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="patient ∈ patients"/>
+        <org.eventb.core.action name="_eKGZEg7EEe-t4pcCB38aNA" org.eventb.core.assignment="treatments_viewing ≔ ((dom(appointment_patient ▷ {patient}) ∩ completed_appointments) ◁ appointment_treatment)∼ ; (dom(appointment_patient ▷ {patient}) ◁ appointment_time)" org.eventb.core.generated="false" org.eventb.core.label="ev1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_eKHAIA7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="addFirstUser">
+        <org.eventb.core.parameter name="_eKHnMA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="new_user"/>
+        <org.eventb.core.guard name="_eKHnMQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="users = ∅"/>
+        <org.eventb.core.guard name="_eKHnMg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="new_user ∈ USER"/>
+        <org.eventb.core.action name="_eKIOQA7EEe-t4pcCB38aNA" org.eventb.core.assignment="users ≔ users ∪ {new_user}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="_eKIOQQ7EEe-t4pcCB38aNA" org.eventb.core.assignment="administrators ≔ administrators ∪ {new_user}" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_eKIOQg7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="trainDentist">
+        <org.eventb.core.parameter name="_eKI1UA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="admin"/>
+        <org.eventb.core.parameter name="_eKI1UQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="dentist"/>
+        <org.eventb.core.parameter name="_eKI1Ug7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="treatment"/>
+        <org.eventb.core.guard name="_eKI1Uw7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="dentist ∈ dentists"/>
+        <org.eventb.core.guard name="_eKJcYA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="admin ∈ administrators"/>
+        <org.eventb.core.guard name="_eKJcYQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="admin ∈ logged_in"/>
+        <org.eventb.core.guard name="_eKJcYg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="treatment ∈ TREATMENT_TYPE"/>
+        <org.eventb.core.guard name="_eKKDcA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd5" org.eventb.core.predicate="treatment ∉ dentist_treatments[{dentist}]"/>
+        <org.eventb.core.action name="_eKKDcQ7EEe-t4pcCB38aNA" org.eventb.core.assignment="dentist_treatments ≔ dentist_treatments ∪ ({dentist} × {treatment})" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_eKKqgA7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="registerAdministrator">
+        <org.eventb.core.parameter name="_eKKqgQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="current_user"/>
+        <org.eventb.core.parameter name="_eKLRkA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="user"/>
+        <org.eventb.core.guard name="_eKLRkQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="current_user ∈ logged_in"/>
+        <org.eventb.core.guard name="_eKLRkg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="current_user ∈ administrators"/>
+        <org.eventb.core.guard name="_eKLRkw7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="user ∉ patients ∪ dentists ∪ administrators"/>
+        <org.eventb.core.action name="_eKL4oA7EEe-t4pcCB38aNA" org.eventb.core.assignment="users ≔ users ∪ {user}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="_eKL4oQ7EEe-t4pcCB38aNA" org.eventb.core.assignment="administrators ≔ administrators ∪ {user}" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_eKL4og7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="registerDentist">
+        <org.eventb.core.parameter name="_eKL4ow7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="current_user"/>
+        <org.eventb.core.parameter name="_eKL4pA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="user"/>
+        <org.eventb.core.parameter name="_eKMfsA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="qualified_treatments"/>
+        <org.eventb.core.guard name="_eKMfsQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="current_user ∈ logged_in"/>
+        <org.eventb.core.guard name="_eKMfsg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="current_user ∈ administrators"/>
+        <org.eventb.core.guard name="_eKNGwA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="user ∉ users"/>
+        <org.eventb.core.guard name="_eKNGwQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="user ∈ USER"/>
+        <org.eventb.core.guard name="_eKNt0A7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd5" org.eventb.core.predicate="qualified_treatments ⊆ TREATMENT_TYPE"/>
+        <org.eventb.core.action name="_eKNt0Q7EEe-t4pcCB38aNA" org.eventb.core.assignment="users ≔ users ∪ {user}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="_eKNt0g7EEe-t4pcCB38aNA" org.eventb.core.assignment="dentists ≔ dentists ∪ {user}" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="_eKOU4A7EEe-t4pcCB38aNA" org.eventb.core.assignment="dentist_treatments ≔ dentist_treatments ∪ ({user} × qualified_treatments)" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_eKOU4Q7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="registerPatient">
+        <org.eventb.core.parameter name="_eKOU4g7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="user"/>
+        <org.eventb.core.parameter name="_eKOU4w7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="nhs_number"/>
+        <org.eventb.core.guard name="_eKO78A7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="user ∉ patients ∪ dentists ∪ administrators"/>
+        <org.eventb.core.guard name="_eKO78Q7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="administrators ≠ ∅"/>
+        <org.eventb.core.guard name="_eKO78g7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="nhs_number ∉ registered_nhsnumbers"/>
+        <org.eventb.core.guard name="_eKPjAA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="nhs_number ∈ NHS_NUMBER"/>
+        <org.eventb.core.action name="_eKPjAQ7EEe-t4pcCB38aNA" org.eventb.core.assignment="users ≔ users ∪ {user}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="_eKPjAg7EEe-t4pcCB38aNA" org.eventb.core.assignment="patients ≔ patients ∪ {user}" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="_eKQKEA7EEe-t4pcCB38aNA" org.eventb.core.assignment="patient_nhsnumber(user) ≔ nhs_number" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+        <org.eventb.core.action name="_eKQKEQ7EEe-t4pcCB38aNA" org.eventb.core.assignment="registered_nhsnumbers ≔ registered_nhsnumbers ∪ {nhs_number}" org.eventb.core.generated="false" org.eventb.core.label="act4"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_eKQKEg7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="check_in_to_Appointment">
+        <org.eventb.core.parameter name="_eKQxIA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="user"/>
+        <org.eventb.core.parameter name="_eKQxIQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="appointment"/>
+        <org.eventb.core.guard name="_eKQxIg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd1_patient" org.eventb.core.predicate="user ∈ patients"/>
+        <org.eventb.core.guard name="_eKRYMA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="user ∈ logged_in"/>
+        <org.eventb.core.guard name="_eKRYMQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd2_booked" org.eventb.core.predicate="appointment ∈ booked_appointments"/>
+        <org.eventb.core.guard name="_eKRYMg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd4_timeValid" org.eventb.core.predicate="time = appointment_time(appointment)"/>
+        <org.eventb.core.action name="_eKR_QA7EEe-t4pcCB38aNA" org.eventb.core.assignment="booked_appointments ≔ booked_appointments ∖ {appointment}" org.eventb.core.generated="false" org.eventb.core.label="ev1"/>
+        <org.eventb.core.action name="_eKR_QQ7EEe-t4pcCB38aNA" org.eventb.core.assignment="checked_in_appointments ≔ checked_in_appointments ∪ {appointment}" org.eventb.core.generated="false" org.eventb.core.label="ev2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_eKR_Qg7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="complete_Appointment">
+        <org.eventb.core.parameter name="_eKR_Qw7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="user"/>
+        <org.eventb.core.parameter name="_eKSmUA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="appointment"/>
+        <org.eventb.core.guard name="_eKSmUQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd1_dentist" org.eventb.core.predicate="user ∈ dentists"/>
+        <org.eventb.core.guard name="_eKTNYA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="user ∈ logged_in"/>
+        <org.eventb.core.guard name="_eKTNYQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd2_checkedIn" org.eventb.core.predicate="appointment ∈ checked_in_appointments"/>
+        <org.eventb.core.action name="_eKTNYg7EEe-t4pcCB38aNA" org.eventb.core.assignment="checked_in_appointments ≔ checked_in_appointments ∖ {appointment}" org.eventb.core.generated="false" org.eventb.core.label="ev1"/>
+        <org.eventb.core.action name="_eKT0cA7EEe-t4pcCB38aNA" org.eventb.core.assignment="completed_appointments ≔ completed_appointments ∪ {appointment}" org.eventb.core.generated="false" org.eventb.core.label="ev2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_eKT0cQ7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="missed_Appointment">
+        <org.eventb.core.parameter name="_eKT0cg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="user"/>
+        <org.eventb.core.parameter name="_eKUbgA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="appointment"/>
+        <org.eventb.core.guard name="_eKUbgQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd1_administrator" org.eventb.core.predicate="user ∈ administrators"/>
+        <org.eventb.core.guard name="_eKUbgg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="user ∈ logged_in"/>
+        <org.eventb.core.guard name="_eKVCkA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd2_pending" org.eventb.core.predicate="appointment ∈ booked_appointments"/>
+        <org.eventb.core.action name="_eKVCkQ7EEe-t4pcCB38aNA" org.eventb.core.assignment="booked_appointments ≔ booked_appointments ∖ {appointment}" org.eventb.core.generated="false" org.eventb.core.label="ev1"/>
+        <org.eventb.core.action name="_eKVCkg7EEe-t4pcCB38aNA" org.eventb.core.assignment="missed_appointments ≔ missed_appointments ∪ {appointment}" org.eventb.core.generated="false" org.eventb.core.label="ev2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_eKVpoA7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Patient_BookAppointment">
+        <org.eventb.core.parameter name="_eKVpoQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="user"/>
+        <org.eventb.core.parameter name="_eKVpog7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="date"/>
+        <org.eventb.core.parameter name="_eKVpow7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="treatment"/>
+        <org.eventb.core.parameter name="_eKWQsA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="dentist"/>
+        <org.eventb.core.parameter name="_eKWQsQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="name"/>
+        <org.eventb.core.guard name="_eKWQsg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd1_userIsUser" org.eventb.core.predicate="user ∈ users"/>
+        <org.eventb.core.guard name="_eKWQsw7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd2_userIsPatient" org.eventb.core.predicate="user ∈ patients"/>
+        <org.eventb.core.guard name="_eKW3wA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd3_dateValid" org.eventb.core.predicate="date ∈ ℕ"/>
+        <org.eventb.core.guard name="_eKW3wQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd4_treatmentsValid" org.eventb.core.predicate="treatment ∈ TREATMENT_TYPE"/>
+        <org.eventb.core.guard name="_eKW3wg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="valid_dentist" org.eventb.core.predicate="dentist ∈ dentists"/>
+        <org.eventb.core.guard name="_eKXe0A7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="treatment_can_be_performed_by_dentist" org.eventb.core.predicate="treatment ∈ dentist_treatments[{dentist}]"/>
+        <org.eventb.core.guard name="_eKXe0Q7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="same_booked" org.eventb.core.predicate="∀appointment · appointment ∈ (booked_appointments ◁ appointment_patient)∼[{user}] ⇒ treatment ≠ appointment_treatment(appointment)"/>
+        <org.eventb.core.guard name="_eKXe0g7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="not_last14" org.eventb.core.predicate="∀appointment · appointment ∈ (completed_appointments ◁ appointment_patient)∼[{user}] ⇒ ( treatment ≠ appointment_treatment(appointment) ) ∨ ( appointment_time(appointment) &lt; (time−14))"/>
+        <org.eventb.core.guard name="_eKYF4A7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="dentist_busy" org.eventb.core.predicate="date ∉ appointment_time[appointment_dentist∼[{dentist}]]"/>
+        <org.eventb.core.guard name="_eKYF4Q7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="patient_busy" org.eventb.core.predicate="date ∉ appointment_time[appointment_patient∼[{user}]]"/>
+        <org.eventb.core.guard name="_eKYF4g7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="book_in_future" org.eventb.core.predicate="date &gt; time"/>
+        <org.eventb.core.guard name="_eKYF4w7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd6_userLoggedIn" org.eventb.core.predicate="user ∈ logged_in"/>
+        <org.eventb.core.guard name="_eKYs8A7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd_name" org.eventb.core.predicate="name ∈ APPOINTMENT"/>
+        <org.eventb.core.guard name="_eKYs8Q7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd_name2" org.eventb.core.predicate="name ∉ appointments"/>
+        <org.eventb.core.action name="_eKZUAA7EEe-t4pcCB38aNA" org.eventb.core.assignment="appointments ≔ appointments ∪ {name}" org.eventb.core.generated="false" org.eventb.core.label="ev1"/>
+        <org.eventb.core.action name="_eKZUAQ7EEe-t4pcCB38aNA" org.eventb.core.assignment="booked_appointments ≔ booked_appointments ∪ {name}" org.eventb.core.generated="false" org.eventb.core.label="ev2"/>
+        <org.eventb.core.action name="_eKZ7EA7EEe-t4pcCB38aNA" org.eventb.core.assignment="appointment_treatment(name) ≔ treatment" org.eventb.core.generated="false" org.eventb.core.label="ev3"/>
+        <org.eventb.core.action name="_eKZ7EQ7EEe-t4pcCB38aNA" org.eventb.core.assignment="appointment_time(name) ≔ date" org.eventb.core.generated="false" org.eventb.core.label="ev4"/>
+        <org.eventb.core.action name="_eKZ7Eg7EEe-t4pcCB38aNA" org.eventb.core.assignment="appointment_patient(name) ≔ user" org.eventb.core.generated="false" org.eventb.core.label="ev5"/>
+        <org.eventb.core.action name="_eKZ7Ew7EEe-t4pcCB38aNA" org.eventb.core.assignment="appointment_dentist(name) ≔ dentist" org.eventb.core.generated="false" org.eventb.core.label="ev6"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_eKaiIA7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Patient_CancelAppointment">
+        <org.eventb.core.parameter name="_eKaiIQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="user"/>
+        <org.eventb.core.parameter name="_eKaiIg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="date"/>
+        <org.eventb.core.guard name="_eKbJMA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd1_userIsUser" org.eventb.core.predicate="user ∈ users"/>
+        <org.eventb.core.guard name="_eKbJMQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd2_userIsPatient" org.eventb.core.predicate="user ∈ patients"/>
+        <org.eventb.core.guard name="_eKbJMg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd3_dateValid" org.eventb.core.predicate="date ∈ ℕ"/>
+        <org.eventb.core.guard name="_eKbwQA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd6_userLoggedIn" org.eventb.core.predicate="user ∈ logged_in"/>
+        <org.eventb.core.guard name="_eKbwQQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd5_noLaterThan2Days" org.eventb.core.predicate="time + 2 ≤ date"/>
+        <org.eventb.core.guard name="_eKbwQg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd4_userOwnsAppointmentAndIsNotCompleted" org.eventb.core.predicate="ran( (dom(appointment_time ▷ {date}) ∩ booked_appointments) ◁ appointment_patient ) = {user}"/>
+        <org.eventb.core.action name="_eKbwQw7EEe-t4pcCB38aNA" org.eventb.core.assignment="appointments ≔ appointments ∖ (appointment_time∼[{date}] ∩ booked_appointments ∩ appointment_patient∼[{user}])" org.eventb.core.generated="false" org.eventb.core.label="ev1"/>
+        <org.eventb.core.action name="_eKcXUA7EEe-t4pcCB38aNA" org.eventb.core.assignment="booked_appointments ≔ booked_appointments ∖ (appointment_time∼[{date}] ∩ booked_appointments ∩ appointment_patient∼[{user}])" org.eventb.core.generated="false" org.eventb.core.label="ev2"/>
+        <org.eventb.core.action name="_eKcXUQ7EEe-t4pcCB38aNA" org.eventb.core.assignment="appointment_patient ≔ (appointment_time∼[{date}] ∩ booked_appointments ∩ appointment_patient∼[{user}]) ⩤ appointment_patient" org.eventb.core.generated="false" org.eventb.core.label="ev5"/>
+        <org.eventb.core.action name="_eKc-YA7EEe-t4pcCB38aNA" org.eventb.core.assignment="appointment_dentist ≔ (appointment_time∼[{date}] ∩ booked_appointments ∩ appointment_patient∼[{user}]) ⩤ appointment_dentist" org.eventb.core.generated="false" org.eventb.core.label="ev6"/>
+        <org.eventb.core.action name="_eKc-YQ7EEe-t4pcCB38aNA" org.eventb.core.assignment="appointment_treatment ≔ (appointment_time∼[{date}] ∩ booked_appointments ∩ appointment_patient∼[{user}]) ⩤ appointment_treatment" org.eventb.core.generated="false" org.eventb.core.label="ev3"/>
+        <org.eventb.core.action name="_eKc-Yg7EEe-t4pcCB38aNA" org.eventb.core.assignment="appointment_time ≔ (appointment_time∼[{date}] ∩ booked_appointments ∩ appointment_patient∼[{user}]) ⩤ appointment_time" org.eventb.core.generated="false" org.eventb.core.label="ev4"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_eKdlcA7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Patient_RebookAppointment">
+        <org.eventb.core.parameter name="_eKdlcQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="user"/>
+        <org.eventb.core.parameter name="_eKdlcg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="date"/>
+        <org.eventb.core.parameter name="_eKdlcw7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="new_date"/>
+        <org.eventb.core.parameter name="_eKeMgA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="new_dentist"/>
+        <org.eventb.core.guard name="_eKeMgQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd1_userIsUser" org.eventb.core.predicate="user ∈ users"/>
+        <org.eventb.core.guard name="_eKeMgg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd2_userIsPatient" org.eventb.core.predicate="user ∈ patients"/>
+        <org.eventb.core.guard name="_eKezkA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd6_userLoggedIn" org.eventb.core.predicate="user ∈ logged_in"/>
+        <org.eventb.core.guard name="_eKezkQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="noLaterThan2Days" org.eventb.core.predicate="time + 2 ≤ date"/>
+        <org.eventb.core.guard name="_eKezkg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="userOwnsAppointmentAndIsNotCompleted" org.eventb.core.predicate="ran( (dom(appointment_time ▷ {date}) ∩ booked_appointments) ◁ appointment_patient ) = {user}"/>
+        <org.eventb.core.guard name="_eKfaoA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd3_dateValid" org.eventb.core.predicate="date ∈ ℕ"/>
+        <org.eventb.core.guard name="_eKfaoQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="grd4_newDateValid" org.eventb.core.predicate="new_date ∈ ℕ"/>
+        <org.eventb.core.guard name="_eKfaog7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="valid_dentist" org.eventb.core.predicate="new_dentist ∈ dentists"/>
+        <org.eventb.core.guard name="_eKgBsA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="treatment_can_be_performed_by_dentist" org.eventb.core.predicate="appointment_treatment[(appointment_time∼[{date}] ∩ booked_appointments ∩ appointment_patient∼[{user}])] ⊆ dentist_treatments[{new_dentist}]"/>
+        <org.eventb.core.guard name="_eKgBsQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="dentist_busy" org.eventb.core.predicate="new_date ∉ appointment_time[appointment_dentist∼[{new_dentist}]]"/>
+        <org.eventb.core.guard name="_eKgowA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="patient_busy" org.eventb.core.predicate="new_date ∉ appointment_time[appointment_patient∼[{user}]]"/>
+        <org.eventb.core.guard name="_eKgowQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="book_in_future" org.eventb.core.predicate="date &gt; time"/>
+        <org.eventb.core.action name="_eKgowg7EEe-t4pcCB38aNA" org.eventb.core.assignment="appointment_time ≔ ((appointment_time∼[{date}] ∩ booked_appointments ∩ appointment_patient∼[{user}]) × {new_date}) ∪ ((appointment_time∼[{date}] ∩ booked_appointments ∩ appointment_patient∼[{user}]) ⩤ appointment_time)" org.eventb.core.generated="false" org.eventb.core.label="ev1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_eKhP0A7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Tick_Clock">
+        <org.eventb.core.action name="_eKhP0Q7EEe-t4pcCB38aNA" org.eventb.core.assignment="missed_appointments ≔ missed_appointments ∪ (booked_appointments ◁ appointment_time)∼[{time}]" org.eventb.core.generated="false" org.eventb.core.label="ev0"/>
+        <org.eventb.core.action name="_eKhP0g7EEe-t4pcCB38aNA" org.eventb.core.assignment="booked_appointments ≔ booked_appointments ∖ (booked_appointments ◁ appointment_time)∼[{time}]" org.eventb.core.generated="false" org.eventb.core.label="ev2"/>
+        <org.eventb.core.action name="_eKh24A7EEe-t4pcCB38aNA" org.eventb.core.assignment="time ≔ time + 1" org.eventb.core.generated="false" org.eventb.core.label="ev1"/>
+    </org.eventb.core.event>
+</org.eventb.core.machineFile>

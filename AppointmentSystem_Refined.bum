@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xmachine.base" org.eventb.core.generated="false" version="5">
+    <org.eventb.core.refinesMachine name="_6hH5AA7EEe-t4pcCB38aNA" org.eventb.core.target="AppointmentSystem"/>
+    <org.eventb.core.seesContext name="_6hIgEA7EEe-t4pcCB38aNA" org.eventb.core.target="AppointmentSystem"/>
+    <org.eventb.core.variable name="_6hIgEQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="time"/>
+    <org.eventb.core.variable name="_6hIgEg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="users"/>
+    <org.eventb.core.variable name="_6hIgEw7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="administrators"/>
+    <org.eventb.core.variable name="_6hJHIA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="dentists"/>
+    <org.eventb.core.variable name="_6hJHIQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="patients"/>
+    <org.eventb.core.variable name="_6hJHIg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="patient_nhsnumber"/>
+    <org.eventb.core.variable name="_6hJHIw7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="registered_nhsnumbers"/>
+    <org.eventb.core.variable name="_6hJHJA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="appointments"/>
+    <org.eventb.core.variable name="_6hJuMA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="appointment_time"/>
+    <org.eventb.core.variable name="_6hJuMQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="appointment_treatment"/>
+    <org.eventb.core.variable name="_6hJuMg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="appointment_patient"/>
+    <org.eventb.core.variable name="_6hJuMw7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="appointment_dentist"/>
+    <org.eventb.core.variable name="_6hKVQA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="dentist_treatments"/>
+    <org.eventb.core.variable name="_6hKVQQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="booked_appointments"/>
+    <org.eventb.core.variable name="_6hKVQg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="completed_appointments"/>
+    <org.eventb.core.variable name="_6hKVQw7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="missed_appointments"/>
+    <org.eventb.core.variable name="_6hK8UA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="checked_in_appointments"/>
+    <org.eventb.core.variable name="_6hK8UQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="logged_in"/>
+    <org.eventb.core.variable name="_6hK8Ug7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="appointments_viewing"/>
+    <org.eventb.core.variable name="_6hK8Uw7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="treatments_viewing"/>
+    <org.eventb.core.variable name="_6hK8VA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="user_password_relations"/>
+    <org.eventb.core.invariant name="_6hLjYA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="inv28" org.eventb.core.predicate="user_password_relations ∈ users → PASSWORD"/>
+    <org.eventb.core.event name="_6hLjYQ7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="INITIALISATION">
+        <org.eventb.core.action name="_6hLjYg7EEe-t4pcCB38aNA" org.eventb.core.assignment="user_password_relations ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init_passwords"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_6hMKcA7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="login">
+        <org.eventb.core.refinesEvent name="_6hMKcQ7EEe-t4pcCB38aNA" org.eventb.core.target="login"/>
+        <org.eventb.core.parameter name="_6hMKcg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="password"/>
+        <org.eventb.core.guard name="_6hMxgA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="ref_grd1" org.eventb.core.predicate="password ∈ PASSWORD"/>
+        <org.eventb.core.guard name="_6hMxgQ7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="ref_grd2" org.eventb.core.predicate="user_password_relations(user) = password"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_6hMxgg7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="logout">
+        <org.eventb.core.refinesEvent name="_6hNYkA7EEe-t4pcCB38aNA" org.eventb.core.target="logout"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_6hNYkQ7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="viewAppointments_AdminDentist">
+        <org.eventb.core.refinesEvent name="_6hNYkg7EEe-t4pcCB38aNA" org.eventb.core.target="viewAppointments_AdminDentist"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_6hNYkw7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="viewCompletedTreatments_Patient">
+        <org.eventb.core.refinesEvent name="_6hN_oA7EEe-t4pcCB38aNA" org.eventb.core.target="viewCompletedTreatments_Patient"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_6hN_oQ7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="addFirstUser">
+        <org.eventb.core.refinesEvent name="_6hN_og7EEe-t4pcCB38aNA" org.eventb.core.target="addFirstUser"/>
+        <org.eventb.core.parameter name="_6hN_ow7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="password"/>
+        <org.eventb.core.guard name="_6hOmsA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="ref_grd1" org.eventb.core.predicate="password ∈ PASSWORD"/>
+        <org.eventb.core.action name="_6hOmsQ7EEe-t4pcCB38aNA" org.eventb.core.assignment="user_password_relations(new_user) ≔ password" org.eventb.core.generated="false" org.eventb.core.label="ref_act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_6hPNwA7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="registerAdministrator">
+        <org.eventb.core.refinesEvent name="_6hPNwQ7EEe-t4pcCB38aNA" org.eventb.core.target="registerAdministrator"/>
+        <org.eventb.core.parameter name="_6hPNwg7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="password"/>
+        <org.eventb.core.guard name="_6hP00A7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="ref_grd1" org.eventb.core.predicate="password ∈ PASSWORD"/>
+        <org.eventb.core.action name="_6hP00Q7EEe-t4pcCB38aNA" org.eventb.core.assignment="user_password_relations(user) ≔ password" org.eventb.core.generated="false" org.eventb.core.label="ref_act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_6hP00g7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="registerDentist">
+        <org.eventb.core.refinesEvent name="_6hQb4A7EEe-t4pcCB38aNA" org.eventb.core.target="registerDentist"/>
+        <org.eventb.core.parameter name="_6hQb4Q7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="password"/>
+        <org.eventb.core.guard name="_6hQb4g7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="ref_grd1" org.eventb.core.predicate="password ∈ PASSWORD"/>
+        <org.eventb.core.action name="_6hRC8A7EEe-t4pcCB38aNA" org.eventb.core.assignment="user_password_relations(user) ≔ password" org.eventb.core.generated="false" org.eventb.core.label="ref_act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_6hRC8Q7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="registerPatient">
+        <org.eventb.core.refinesEvent name="_6hRC8g7EEe-t4pcCB38aNA" org.eventb.core.target="registerPatient"/>
+        <org.eventb.core.parameter name="_6hRC8w7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="password"/>
+        <org.eventb.core.guard name="_6hRqAA7EEe-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.label="ref_grd1" org.eventb.core.predicate="password ∈ PASSWORD"/>
+        <org.eventb.core.action name="_6hRqAQ7EEe-t4pcCB38aNA" org.eventb.core.assignment="user_password_relations(user) ≔ password" org.eventb.core.generated="false" org.eventb.core.label="ref_act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_6hRqAg7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="check_in_to_Appointment">
+        <org.eventb.core.refinesEvent name="_6hSREA7EEe-t4pcCB38aNA" org.eventb.core.target="check_in_to_Appointment"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_6hSREQ7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="complete_Appointment">
+        <org.eventb.core.refinesEvent name="_6hSREg7EEe-t4pcCB38aNA" org.eventb.core.target="complete_Appointment"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_6hSREw7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="missed_Appointment">
+        <org.eventb.core.refinesEvent name="_6hS4IA7EEe-t4pcCB38aNA" org.eventb.core.target="missed_Appointment"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_6hS4IQ7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="Patient_BookAppointment">
+        <org.eventb.core.refinesEvent name="_6hS4Ig7EEe-t4pcCB38aNA" org.eventb.core.target="Patient_BookAppointment"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_6hS4Iw7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="Patient_CancelAppointment">
+        <org.eventb.core.refinesEvent name="_6hTfMA7EEe-t4pcCB38aNA" org.eventb.core.target="Patient_CancelAppointment"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_6hTfMQ7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="Patient_RebookAppointment">
+        <org.eventb.core.refinesEvent name="_6hTfMg7EEe-t4pcCB38aNA" org.eventb.core.target="Patient_RebookAppointment"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_6hTfMw7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="Tick_Clock">
+        <org.eventb.core.refinesEvent name="_6hUGQA7EEe-t4pcCB38aNA" org.eventb.core.target="Tick_Clock"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_6hUGQQ7EEe-t4pcCB38aNA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="trainDentist">
+        <org.eventb.core.refinesEvent name="_6hUGQg7EEe-t4pcCB38aNA" org.eventb.core.target="trainDentist"/>
+    </org.eventb.core.event>
+</org.eventb.core.machineFile>

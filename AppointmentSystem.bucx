@@ -1,0 +1,13 @@
+context AppointmentSystem
+sets
+	USER
+	
+	APPOINTMENT
+	
+	TREATMENTS
+	TREATMENT_TYPE
+	
+	PASSWORD
+	
+	NHS_NUMBER
+end

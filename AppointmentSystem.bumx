@@ -1,0 +1,433 @@
+machine AppointmentSystem
+sees AppointmentSystem
+
+variables
+	time
+	
+	//REQ1: The system manages a set of registered users
+	//REQ4: There are three types of users: administrators, dentists and patients
+	users
+	administrators
+	dentists
+	
+	patients
+	patient_nhsnumber
+	registered_nhsnumbers
+	
+	appointments
+	appointment_time
+	appointment_treatment
+	appointment_patient
+	appointment_dentist
+	
+	dentist_treatments
+	
+	booked_appointments 
+	completed_appointments
+	missed_appointments
+	checked_in_appointments
+	
+	logged_in
+	
+	appointments_viewing
+	treatments_viewing
+invariants
+	// Types of users
+	@inv1: users ⊆ USER
+	@inv2: administrators ⊆ users
+	@inv3: dentists ⊆ users
+	@inv4: patients ⊆ users
+	@inv8: registered_nhsnumbers ⊆ NHS_NUMBER
+	// Partition types of user
+	// REQ5: A user can only have one role in the system
+	@inv5: partition(users, administrators, dentists, patients)
+	
+	// Patient attributes 
+	// REQ10: A registered patient must have a unique NHS number
+	@inv9: patient_nhsnumber ∈ patients ↣ registered_nhsnumbers
+	
+	// Time in arbitrary units
+	@inv_time: time ∈ ℕ
+	
+	// Logged in set
+	@loggedin: logged_in ⊆ users
+	
+	// Appointment Status
+	@int10: appointments ⊆ APPOINTMENT
+	@inv11: booked_appointments ⊆ appointments
+	@inv12: checked_in_appointments ⊆ appointments
+	@inv13: completed_appointments ⊆ appointments
+	@inv14: missed_appointments ⊆ appointments
+	// Appointments can only be in one status category
+	@inv_appointmentPartition: partition(appointments, booked_appointments, checked_in_appointments, completed_appointments, missed_appointments)
+	
+	// ALL appointments must have ONE time (non unique, as many rooms could be available)
+	@inv_appointment_time: appointment_time ∈ appointments → ℕ
+	// ALL appointments must have ONE (non unique) treatment
+	@inv_appointment_treatment: appointment_treatment ∈ appointments → TREATMENT_TYPE
+	
+	// ALL appointments must have ONE patient
+	@appointment_patients: appointment_patient ∈ appointments → patients 
+	// ALL appointments must have ONE dentist
+	@appointment_dentists: appointment_dentist ∈ appointments → dentists 
+	
+	// Dentists cannot have 2 appointments at once
+	@dentist_time: ∀dentist · dentist ∈ dentists ⇒ card(appointment_dentist∼[{dentist}] ◁ appointment_time) = card(appointment_time[appointment_dentist∼[{dentist}]])
+	
+	// Variables for outputting to user when viewing appointments	
+	@appointments_currently_viewed: appointments_viewing ⊆ appointments
+	@treatments_currently_viewed: treatments_viewing ∈ TREATMENT_TYPE ↔ ℕ
+	
+	// Dentists qualified treatments, many to many
+	@dentist_qualified: dentist_treatments ∈ dentists ↔ TREATMENT_TYPE
+
+events
+	event INITIALISATION
+	then
+		//Initialise the sets as empty
+		@ev1: users ≔ ∅
+		@ev2: administrators ≔ ∅
+		@ev3: patients ≔ ∅
+		@ev4: dentists ≔ ∅
+	
+		@ev5: patient_nhsnumber ≔ ∅
+		
+		// Initialise appointments and appointment categories
+		@init_appointment: appointments ≔ ∅
+		@act7: booked_appointments ≔ ∅
+		@act8: checked_in_appointments ≔ ∅
+		@act9: missed_appointments ≔ ∅
+		@act10: completed_appointments ≔ ∅
+		
+		@init_appointment_time: appointment_time ≔ ∅
+		@init_appointment_treatment: appointment_treatment ≔ ∅
+		@init_appointment_patient: appointment_patient ≔ ∅
+		@init_appointment_dentist: appointment_dentist ≔ ∅
+		
+		@init_dentist_treatments: dentist_treatments ≔ ∅
+		
+		// Logged in set
+		@init: logged_in ≔ ∅
+		
+		// Output to user variables initialisation
+		@init_appointments_viewing: appointments_viewing ≔ ∅
+		@init_treatments_viewing: treatments_viewing ≔ ∅
+			
+		
+		
+		// Time
+		@ev12: time ≔ 0
+		
+		// Registered number set
+		@act6: registered_nhsnumbers ≔ ∅
+		
+	end
+	
+	//REQ3: A logged-in user can log out of the system
+	event login
+	any user where
+		//Checking the user is a valid user
+		@grd1: user ∈ users
+		//Check the user isn't logged in
+		@grd2: user ∉ logged_in
+	then
+		//Add user to logged in set
+		@evn1: logged_in ≔ logged_in ∪ {user}
+	end
+	
+	event logout
+	any user where
+		//Checking the user is a valid user
+		@grd1: user ∈ users
+		//Check user is logged in
+		@grd2: user ∈ logged_in
+	then
+		//Remove user from logged in set
+		@evn1: logged_in ≔ logged_in ∖ {user}
+	end
+	
+	// REQ23: A logged-in administrator or dentist to view a patient appointment record with their NHS number
+	event viewAppointments_AdminDentist
+	any userAdminOrDentist patientsNhsnumber where
+		//Check user is logged in
+		@user_loggedin: userAdminOrDentist ∈ logged_in
+		//Check user is an admin or a dentist
+		@user_is_admin_or_dentist: userAdminOrDentist ∈ administrators ∪ dentists
+		//Check that the patient's nhs number is registered
+		@patient_is_patient: patientsNhsnumber ∈ NHS_NUMBER
+	then
+		//View Appointments for specified nhs number
+		@ev1: appointments_viewing ≔ dom(appointment_patient ▷ dom(patient_nhsnumber ▷ {patientsNhsnumber}))
+	end 
+	
+	// REQ25: A logged-in patient can view their treatment record.
+	event viewCompletedTreatments_Patient
+	any patient where
+		//Check patient is logged in
+		@grd1: patient ∈ logged_in
+		//Check patient is a valid patient
+		@grd2: patient ∈ patients
+	then
+		//View completed treatments for patient
+		@ev1: treatments_viewing ≔ ((dom(appointment_patient ▷ {patient}) ∩ completed_appointments) ◁ appointment_treatment)∼ ; (dom(appointment_patient ▷ {patient}) ◁ appointment_time)
+	end 
+	
+	// REQ6: The root user is the initial administrator
+	// The first user of the system should be an administrator
+	// Adds the user to the set of users and the set of administrators
+	event addFirstUser
+	any new_user where
+		//User set must be empty to add the first user
+		@grd1: users = ∅
+		//User must be a valid user
+		@grd2: new_user ∈ USER
+	then
+		//Add new user to users set
+		@act1: users ≔ users ∪ {new_user}
+		//Add new user to administrators set
+		@act2: administrators ≔ administrators ∪ {new_user}
+	end
+
+	// New event
+	event trainDentist
+	any admin dentist treatment where
+		@grd1: dentist ∈ dentists
+		@grd2: admin ∈ administrators
+		@grd3: admin ∈ logged_in
+		@grd4: treatment ∈ TREATMENT_TYPE
+		@grd5: treatment ∉ dentist_treatments[{dentist}]
+	then
+		@act1: dentist_treatments ≔ dentist_treatments ∪ ({dentist} × {treatment})
+	end
+
+	// REQ7: A logged-in administrator can register a new user for the role of administrator
+	// Registers an administrator
+	// Checks that the current user is an administrator and that the user to be added is not already registered as a role
+	// Adds the user to the set users and to the set of administrators
+	event registerAdministrator
+	any current_user user where
+		//Check current user is logged in 
+		@grd1: current_user ∈ logged_in
+		//Check current user is an admin
+		@grd2: current_user ∈ administrators
+		//Check user isn't a patient, dentist or admin already
+		@grd3: user ∉ patients ∪ dentists ∪ administrators
+	then 
+		//Add user to users set
+		@act1: users ≔ users ∪ {user}
+		//Add user to admins set
+		@act2: administrators ≔ administrators ∪ {user}
+		
+	end
+	
+	// REQ7: A logged-in administrator can register a new user for the role of dentist
+	// Registers a dentist
+	// Checks that the current user is an administrator and that the user to be added is not already registered as a role
+	// Adds the user to the set of users and to the set of dentists
+	event registerDentist
+	any current_user user qualified_treatments where
+		//Check user is logged in
+		@grd1: current_user ∈ logged_in
+		//Check user is an admin
+		@grd2: current_user ∈ administrators
+		//Check new dentist user is not already a user
+		@grd3: user ∉ users
+		//Check user is of type USER
+		@grd4: user ∈ USER
+		//Check that their set of qualified treatments is valid 
+		@grd5: qualified_treatments ⊆ TREATMENT_TYPE
+	then 
+		//Add new dentist user to users set
+		@act1: users ≔ users ∪ {user}
+		//Add new dentist user to dentists set
+		@act2: dentists ≔ dentists ∪ {user}
+		// REQ8: A dentist has a list of treatments they are qualified to perform
+		@act3: dentist_treatments ≔ dentist_treatments ∪ ({user} × qualified_treatments)
+	end
+	
+	// REQ9: A patient can register an account with the system directly
+	// Registers a patient
+	// Checks that the current user is not already registered, and that they have a valid nhs number
+	// Adds the user to the patients, registers the nhs number and links the nhs number to the patient
+	event registerPatient
+	any user nhs_number where
+		@grd1: user ∉ patients ∪ dentists ∪ administrators
+		@grd2: administrators ≠ ∅
+		@grd3: nhs_number ∉ registered_nhsnumbers
+		@grd4: nhs_number ∈ NHS_NUMBER
+	then
+		@act1: users ≔ users ∪ {user}
+		@act2: patients ≔ patients ∪ {user}
+		@act3: patient_nhsnumber(user) ≔ nhs_number
+		@act4: registered_nhsnumbers ≔ registered_nhsnumbers ∪ {nhs_number}
+	end
+	
+	//event add_Appointment 
+	//any appointment where 
+	//	@grd1: appointment ∈ APPOINTMENT
+	//then 
+	// 	@ev1: appointments ≔ appointments ∪ {appointment}
+	// 	@ev2: booked_appointments ≔ booked_appointments ∪ {appointment}
+	//end 
+	
+	// REQ19: A patient can check in on the appointment date
+	event check_in_to_Appointment
+	any user appointment where
+		@grd1_patient: user ∈ patients
+		@grd3: user ∈ logged_in
+		@grd2_booked: appointment ∈ booked_appointments
+		
+		@grd4_timeValid: time = appointment_time(appointment)
+	then
+		@ev1: booked_appointments ≔ booked_appointments ∖ {appointment}
+		@ev2: checked_in_appointments ≔ checked_in_appointments ∪ {appointment}
+	end
+	
+	// REQ20: After a checked-in patient receives the required treatment, a logged-in dentist updates the appointment to "completed"
+	event complete_Appointment
+	any user appointment where
+		@grd1_dentist: user ∈ dentists
+		@grd3: user ∈ logged_in
+		@grd2_checkedIn: appointment ∈ checked_in_appointments
+	then
+		@ev1: checked_in_appointments ≔ checked_in_appointments ∖ {appointment}
+		@ev2: completed_appointments ≔ completed_appointments ∪ {appointment}
+	end
+	
+	// REQ21: When the patients do not turn up to their appointment, an administrator sets the appointment status to "missed"
+	event missed_Appointment
+	any user appointment where
+		@grd1_administrator: user ∈ administrators
+		@grd3: user ∈ logged_in
+		@grd2_pending: appointment ∈ booked_appointments
+	then
+		@ev1: booked_appointments ≔ booked_appointments ∖ {appointment}
+		@ev2: missed_appointments ≔ missed_appointments ∪ {appointment}
+	end
+	
+	// REQ12: A logged-in patient can book a new appointment for a treatment with a registered dentist
+	// User: User logged in
+	event Patient_BookAppointment
+	any user date treatment dentist name where
+		@grd1_userIsUser: user ∈ users
+		@grd2_userIsPatient: user ∈ patients
+		
+		@grd3_dateValid: date ∈ ℕ
+		
+		@grd4_treatmentsValid: treatment ∈ TREATMENT_TYPE
+		
+		@valid_dentist: dentist ∈ dentists
+		// REQ13: The booked dentist must be qualified to perform the treatment
+		@treatment_can_be_performed_by_dentist: treatment ∈ dentist_treatments[{dentist}]
+		
+		// REQ15: A patient cannot have two booked appointments for the same treatment
+		//Cannot have same treatment booked twice
+		@same_booked: ∀appointment · appointment ∈ (booked_appointments ◁ appointment_patient)∼[{user}] ⇒ treatment ≠ appointment_treatment(appointment)
+		
+		// REQ16: A patient cannot have a booked appointment within 14 days of the patient's receiving the same treatment
+		//Cannot have received same treatment in last 14 days
+		@not_last14: ∀appointment · appointment ∈ (completed_appointments ◁ appointment_patient)∼[{user}] ⇒ ( treatment ≠ appointment_treatment(appointment) ) ∨ ( appointment_time(appointment) < (time−14))
+		
+		//Cannot book appointment if doctor is busy 
+		@dentist_busy: date ∉ appointment_time[appointment_dentist∼[{dentist}]]
+		
+		//Cannot book appointment if patient is busy
+		@patient_busy: date ∉ appointment_time[appointment_patient∼[{user}]]
+		
+		// REQ14: An appointment can only be booked for a future date
+		//Can only book appointment in future
+		@book_in_future: date > time
+		
+		@grd6_userLoggedIn: user ∈ logged_in
+		
+		@grd_name: name ∈ APPOINTMENT
+		@grd_name2: name ∉ appointments
+	then
+		@ev1: appointments ≔ appointments ∪ {name}
+		@ev2: booked_appointments ≔ booked_appointments ∪ {name}
+		
+		@ev3: appointment_treatment(name) ≔ treatment
+		@ev4: appointment_time(name) ≔ date
+		@ev5: appointment_patient(name) ≔ user
+		@ev6: appointment_dentist(name) ≔ dentist
+	end
+	
+	// REQ17: A logged-in patient can cancel their booked appointment up to 2 days before the appointment date
+	// User: User logged in
+	event Patient_CancelAppointment
+	any user date where
+		@grd1_userIsUser: user ∈ users
+		@grd2_userIsPatient: user ∈ patients
+		
+		@grd3_dateValid: date ∈ ℕ
+		
+		@grd6_userLoggedIn: user ∈ logged_in
+		
+		// REQ18: A logged-in patient an rebook their booked appointment up to 2 days before the appointment date
+		@grd5_noLaterThan2Days: time + 2 ≤ date
+		
+		@grd4_userOwnsAppointmentAndIsNotCompleted: ran( (dom(appointment_time ▷ {date}) ∩ booked_appointments) ◁ appointment_patient ) = {user}
+	then
+		// Remove all appointments with the date
+		@ev1: appointments ≔ appointments ∖ (appointment_time∼[{date}] ∩ booked_appointments ∩ appointment_patient∼[{user}])
+		// Remove from pending
+		@ev2: booked_appointments ≔ booked_appointments ∖ (appointment_time∼[{date}] ∩ booked_appointments ∩ appointment_patient∼[{user}])
+		// Remove user associated
+		@ev5: appointment_patient ≔ (appointment_time∼[{date}] ∩ booked_appointments ∩ appointment_patient∼[{user}]) ⩤ appointment_patient
+		@ev6: appointment_dentist ≔ (appointment_time∼[{date}] ∩ booked_appointments ∩ appointment_patient∼[{user}]) ⩤ appointment_dentist
+		// Remove treatments and time 
+		@ev3: appointment_treatment ≔ (appointment_time∼[{date}] ∩ booked_appointments ∩ appointment_patient∼[{user}]) ⩤ appointment_treatment
+		@ev4: appointment_time ≔ (appointment_time∼[{date}] ∩ booked_appointments ∩ appointment_patient∼[{user}]) ⩤ appointment_time
+	end
+	
+	
+	event Patient_RebookAppointment
+	//Date: Old appointment date
+	//New_Date: New appointment date
+	any user date new_date new_dentist where
+		@grd1_userIsUser: user ∈ users
+		@grd2_userIsPatient: user ∈ patients
+		
+		@grd6_userLoggedIn: user ∈ logged_in
+		
+		//Checking that the time isn't less than two days before the date of the old appointment
+		@noLaterThan2Days: time + 2 ≤ date
+		
+		//Checking that the user owns the appointment and the appointment is not completed already
+		@userOwnsAppointmentAndIsNotCompleted: ran( (dom(appointment_time ▷ {date}) ∩ booked_appointments) ◁ appointment_patient ) = {user}
+		
+		//Date is a natural number
+		@grd3_dateValid: date ∈ ℕ
+		//New date is a natural number
+		@grd4_newDateValid: new_date ∈ ℕ
+
+		//Checking that the dentist  is in the dentist set (and therefore a valid dentist)
+		@valid_dentist: new_dentist ∈ dentists
+		
+		//Checking if the appointment can  be performed: Time has to right + Appointment has to be booked + User is the correct patient
+		@treatment_can_be_performed_by_dentist: appointment_treatment[(appointment_time∼[{date}] ∩ booked_appointments ∩ appointment_patient∼[{user}])] ⊆ dentist_treatments[{new_dentist}]
+		
+		//Cannot book appointment if doctor is busy 
+		@dentist_busy: new_date ∉ appointment_time[appointment_dentist∼[{new_dentist}]]
+		
+		//Cannot book appointment if patient is busy
+		@patient_busy: new_date ∉ appointment_time[appointment_patient∼[{user}]]
+		
+		//Can only book appointment in future
+		@book_in_future: date > time
+	then
+		@ev1: appointment_time ≔ ((appointment_time∼[{date}] ∩ booked_appointments ∩ appointment_patient∼[{user}]) × {new_date}) ∪ ((appointment_time∼[{date}] ∩ booked_appointments ∩ appointment_patient∼[{user}]) ⩤ appointment_time)
+	end
+	
+	// Advance time
+	event Tick_Clock
+	then
+		// REQ22: The system should ensure that there are no overdue appointments
+		// Miss appointments at this time not yet checked into
+		@ev0: missed_appointments ≔ missed_appointments ∪ (booked_appointments ◁ appointment_time)∼[{time}]
+		@ev2: booked_appointments ≔ booked_appointments ∖ (booked_appointments ◁ appointment_time)∼[{time}]
+		// Advance time
+		@ev1: time ≔ time + 1
+	end
+	
+end

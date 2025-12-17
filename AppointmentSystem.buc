@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xcontext.base" org.eventb.core.generated="false" version="3">
+    <org.eventb.core.carrierSet name="_y9VwwA6_Ee-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="USER"/>
+    <org.eventb.core.carrierSet name="_y9WX0A6_Ee-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="APPOINTMENT"/>
+    <org.eventb.core.carrierSet name="_y9WX0Q6_Ee-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="TREATMENTS"/>
+    <org.eventb.core.carrierSet name="_y9W-4A6_Ee-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="TREATMENT_TYPE"/>
+    <org.eventb.core.carrierSet name="_y9W-4Q6_Ee-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="PASSWORD"/>
+    <org.eventb.core.carrierSet name="_y9W-4g6_Ee-t4pcCB38aNA" org.eventb.core.generated="false" org.eventb.core.identifier="NHS_NUMBER"/>
+</org.eventb.core.contextFile>

@@ -1,0 +1,1168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.prFile version="1">
+    <org.eventb.core.prProof name="INITIALISATION/inv28/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="PASSWORD,USER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(USER×PASSWORD))∈(∅ ⦂ ℙ(USER)) → PASSWORD"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="login/ref_grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prSets="PASSWORD,USER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(users,administrators,dentists,patients))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p4,p5,p6,p7"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p4,p5,p6,p7"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(appointments,booked_appointments,checked_in_appointments,completed_appointments,missed_appointments))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p8" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p9,p10,p11,p12,p13,p14,p15"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p9,p10,p11,p12,p13,p14,p15"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p16" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p17"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'">
+                                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p18"/>
+                                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p19"/>
+                                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p20"/>
+                                        <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p21"/>
+                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p22">
+                                                <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with users=administrators∪dentists∪patients" org.eventb.core.prHyps="p4">
+                                                    <org.eventb.core.prAnte name="'">
+                                                        <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p23"/>
+                                                        <org.eventb.core.prHypAction name="DESELECT1" org.eventb.core.prHyps="p2"/>
+                                                        <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p22" org.eventb.core.prHyps="p3">
+                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p2">
+                                                                <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p2" org.eventb.core.prHyps="p2"/>
+                                                            </org.eventb.core.prAnte>
+                                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                                            <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
+                                                        </org.eventb.core.prRule>
+                                                    </org.eventb.core.prAnte>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p24">
+                                                <org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p24" org.eventb.core.prHyps="p3"/>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="administrators" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="dentists" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="patients" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.prIdent name="user_password_relations" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.prIdent name="users" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="checked_in_appointments∩completed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="user∈dom(user_password_relations)∧user_password_relations∈USER ⇸ PASSWORD"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="dentists∩patients=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="password∈PASSWORD">
+            <org.eventb.core.prIdent name="password" org.eventb.core.type="PASSWORD"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="user∈users"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="booked_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="user∉logged_in">
+            <org.eventb.core.prIdent name="logged_in" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="appointments=booked_appointments∪checked_in_appointments∪completed_appointments∪missed_appointments">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="booked_appointments∩completed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="users=administrators∪dentists∪patients"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="partition(appointments,booked_appointments,checked_in_appointments,completed_appointments,missed_appointments)">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="user∈dom(user_password_relations)"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="administrators∩patients=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="checked_in_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="registered_nhsnumbers⊆NHS_NUMBER">
+            <org.eventb.core.prIdent name="NHS_NUMBER" org.eventb.core.type="ℙ(NHS_NUMBER)"/>
+            <org.eventb.core.prIdent name="registered_nhsnumbers" org.eventb.core.type="ℙ(NHS_NUMBER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="booked_appointments∩checked_in_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="user_password_relations∈users → PASSWORD"/>
+        <org.eventb.core.prPred name="p24" org.eventb.core.predicate="user_password_relations∈USER ⇸ PASSWORD"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="users⊆USER"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(users,administrators,dentists,patients)"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="appointments⊆APPOINTMENT">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="completed_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="user∈administrators∪dentists∪patients"/>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="¬user∈logged_in">
+            <org.eventb.core.prIdent name="logged_in" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="administrators∩dentists=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prExpr name="e0" org.eventb.core.expression="users"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="addFirstUser/inv28/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22" org.eventb.core.prSets="APPOINTMENT,NHS_NUMBER,PASSWORD,TREATMENT_TYPE,USER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(users,administrators,dentists,patients))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p13" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p23,p24,p25,p26"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p23,p24,p25,p26"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(appointments,booked_appointments,checked_in_appointments,completed_appointments,missed_appointments))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p16" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p27,p28,p29,p30,p31,p32,p33"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p27,p28,p29,p30,p31,p32,p33"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p34"/>
+                                <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p35"/>
+                                <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p36"/>
+                                <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p37"/>
+                                <org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p38"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with users=∅" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p21">
+                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p41">
+                                        <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p20" org.eventb.core.prInfHyps="p39"/>
+                                        <org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p23" org.eventb.core.prInfHyps="p40"/>
+                                        <org.eventb.core.prHypAction name="DESELECT2" org.eventb.core.prHyps="p20,p23"/>
+                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p41" org.eventb.core.prHyps="">
+                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p46">
+                                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p39" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p42"/>
+                                                <org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p40" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p43,p44,p45"/>
+                                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with user_password_relations=∅" org.eventb.core.prGoal="p46" org.eventb.core.prHyps="p42">
+                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p47">
+                                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p47" org.eventb.core.prHyps="">
+                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p48">
+                                                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with administrators=∅" org.eventb.core.prHyps="p43">
+                                                                    <org.eventb.core.prAnte name="'">
+                                                                        <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p24" org.eventb.core.prInfHyps="p49"/>
+                                                                        <org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p25" org.eventb.core.prInfHyps="p50"/>
+                                                                        <org.eventb.core.prHypAction name="DESELECT2" org.eventb.core.prHyps="p24,p25"/>
+                                                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                                                                            <org.eventb.core.prAnte name="'">
+                                                                                <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p49"/>
+                                                                                <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p50"/>
+                                                                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with dentists=∅" org.eventb.core.prHyps="p44">
+                                                                                    <org.eventb.core.prAnte name="'">
+                                                                                        <org.eventb.core.prHypAction name="DESELECT0" org.eventb.core.prHyps="p26"/>
+                                                                                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p50"/>
+                                                                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                                                                                            <org.eventb.core.prAnte name="'">
+                                                                                                <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p50"/>
+                                                                                                <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p48" org.eventb.core.prHyps="p17,p15,p11,p3,p12,p5,p18,p4,p14,p6,p22,p10,p8,p7,p19,p2,p9,p1,p20,p21,p23,p24,p25,p26,p27,p28,p29,p30,p31,p32,p33,p42,p43,p44,p45">
+                                                                                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                                                                                                </org.eventb.core.prRule>
+                                                                                            </org.eventb.core.prAnte>
+                                                                                        </org.eventb.core.prRule>
+                                                                                    </org.eventb.core.prAnte>
+                                                                                </org.eventb.core.prRule>
+                                                                            </org.eventb.core.prAnte>
+                                                                        </org.eventb.core.prRule>
+                                                                    </org.eventb.core.prAnte>
+                                                                </org.eventb.core.prRule>
+                                                            </org.eventb.core.prAnte>
+                                                        </org.eventb.core.prRule>
+                                                    </org.eventb.core.prAnte>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="administrators" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="appointment_dentist" org.eventb.core.type="ℙ(APPOINTMENT×USER)"/>
+        <org.eventb.core.prIdent name="appointment_patient" org.eventb.core.type="ℙ(APPOINTMENT×USER)"/>
+        <org.eventb.core.prIdent name="appointment_time" org.eventb.core.type="ℙ(APPOINTMENT×ℤ)"/>
+        <org.eventb.core.prIdent name="appointment_treatment" org.eventb.core.type="ℙ(APPOINTMENT×TREATMENT_TYPE)"/>
+        <org.eventb.core.prIdent name="appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        <org.eventb.core.prIdent name="appointments_viewing" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        <org.eventb.core.prIdent name="dentist_treatments" org.eventb.core.type="ℙ(USER×TREATMENT_TYPE)"/>
+        <org.eventb.core.prIdent name="dentists" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="logged_in" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        <org.eventb.core.prIdent name="new_user" org.eventb.core.type="USER"/>
+        <org.eventb.core.prIdent name="password" org.eventb.core.type="PASSWORD"/>
+        <org.eventb.core.prIdent name="patient_nhsnumber" org.eventb.core.type="ℙ(USER×NHS_NUMBER)"/>
+        <org.eventb.core.prIdent name="patients" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="registered_nhsnumbers" org.eventb.core.type="ℙ(NHS_NUMBER)"/>
+        <org.eventb.core.prIdent name="time" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="treatments_viewing" org.eventb.core.type="ℙ(TREATMENT_TYPE×ℤ)"/>
+        <org.eventb.core.prIdent name="user_password_relations" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.prIdent name="users" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prPred name="p31" org.eventb.core.predicate="checked_in_appointments∩completed_appointments=(∅ ⦂ ℙ(APPOINTMENT))"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="dentist_treatments∈dentists ↔ TREATMENT_TYPE"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="missed_appointments⊆appointments"/>
+        <org.eventb.core.prPred name="p26" org.eventb.core.predicate="dentists∩patients=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p45" org.eventb.core.predicate="patients=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="treatments_viewing∈TREATMENT_TYPE ↔ ℕ"/>
+        <org.eventb.core.prPred name="p37" org.eventb.core.predicate="new_user∈USER"/>
+        <org.eventb.core.prPred name="p47" org.eventb.core.predicate="(∅ ⦂ ℙ(USER×PASSWORD)){new_user ↦ password}∈{new_user} → PASSWORD"/>
+        <org.eventb.core.prPred name="p48" org.eventb.core.predicate="{new_user ↦ password}∈{new_user} → PASSWORD"/>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="users=administrators∪dentists∪patients"/>
+        <org.eventb.core.prPred name="p50" org.eventb.core.predicate="(∅ ⦂ ℙ(USER))∩patients=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="partition(appointments,booked_appointments,checked_in_appointments,completed_appointments,missed_appointments)"/>
+        <org.eventb.core.prPred name="p25" org.eventb.core.predicate="administrators∩patients=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p32" org.eventb.core.predicate="checked_in_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))"/>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="appointment_time∈appointments → ℕ"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="appointments_viewing⊆appointments"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="checked_in_appointments⊆appointments"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="logged_in⊆users"/>
+        <org.eventb.core.prPred name="p34" org.eventb.core.predicate="users⊆USER"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="appointment_patient∈appointments → patients"/>
+        <org.eventb.core.prPred name="p33" org.eventb.core.predicate="completed_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="dentists⊆users"/>
+        <org.eventb.core.prPred name="p24" org.eventb.core.predicate="administrators∩dentists=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="administrators⊆users"/>
+        <org.eventb.core.prPred name="p39" org.eventb.core.predicate="user_password_relations∈(∅ ⦂ ℙ(USER)) → PASSWORD"/>
+        <org.eventb.core.prPred name="p40" org.eventb.core.predicate="(∅ ⦂ ℙ(USER))=administrators∪dentists∪patients"/>
+        <org.eventb.core.prPred name="p38" org.eventb.core.predicate="password∈PASSWORD"/>
+        <org.eventb.core.prPred name="p41" org.eventb.core.predicate="user_password_relations{new_user ↦ password}∈(∅ ⦂ ℙ(USER))∪{new_user} → PASSWORD"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="appointment_dentist∈appointments → dentists"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="appointment_treatment∈appointments → TREATMENT_TYPE"/>
+        <org.eventb.core.prPred name="p30" org.eventb.core.predicate="booked_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="completed_appointments⊆appointments"/>
+        <org.eventb.core.prPred name="p27" org.eventb.core.predicate="appointments=booked_appointments∪checked_in_appointments∪completed_appointments∪missed_appointments"/>
+        <org.eventb.core.prPred name="p29" org.eventb.core.predicate="booked_appointments∩completed_appointments=(∅ ⦂ ℙ(APPOINTMENT))"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="user_password_relations{new_user ↦ password}∈users∪{new_user} → PASSWORD"/>
+        <org.eventb.core.prPred name="p35" org.eventb.core.predicate="registered_nhsnumbers⊆NHS_NUMBER"/>
+        <org.eventb.core.prPred name="p44" org.eventb.core.predicate="dentists=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p28" org.eventb.core.predicate="booked_appointments∩checked_in_appointments=(∅ ⦂ ℙ(APPOINTMENT))"/>
+        <org.eventb.core.prPred name="p43" org.eventb.core.predicate="administrators=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="user_password_relations∈users → PASSWORD"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="patient_nhsnumber∈patients ↣ registered_nhsnumbers"/>
+        <org.eventb.core.prPred name="p42" org.eventb.core.predicate="user_password_relations=(∅ ⦂ ℙ(USER×PASSWORD))"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="patients⊆users"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="time∈ℕ"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="partition(users,administrators,dentists,patients)"/>
+        <org.eventb.core.prPred name="p46" org.eventb.core.predicate="user_password_relations{new_user ↦ password}∈{new_user} → PASSWORD"/>
+        <org.eventb.core.prPred name="p36" org.eventb.core.predicate="appointments⊆APPOINTMENT"/>
+        <org.eventb.core.prPred name="p49" org.eventb.core.predicate="(∅ ⦂ ℙ(USER))∩dentists=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="booked_appointments⊆appointments"/>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="∀dentist⦂USER·dentist∈dentists⇒card(appointment_dentist∼[{dentist}] ◁ appointment_time)=card(appointment_time[appointment_dentist∼[{dentist}]])"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="users=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="registerAdministrator/inv28/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6" org.eventb.core.prSets="APPOINTMENT,PASSWORD,USER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(users,administrators,dentists,patients))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p7,p8,p9,p10"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p7,p8,p9,p10"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(appointments,booked_appointments,checked_in_appointments,completed_appointments,missed_appointments))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p11,p12,p13,p14,p15,p16,p17"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p11,p12,p13,p14,p15,p16,p17"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p18"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'">
+                                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p19"/>
+                                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p20"/>
+                                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p21"/>
+                                        <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p22"/>
+                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with users=administrators∪dentists∪patients" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p7">
+                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p24">
+                                                <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p6" org.eventb.core.prInfHyps="p23"/>
+                                                <org.eventb.core.prHypAction name="DESELECT1" org.eventb.core.prHyps="p6"/>
+                                                <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p24" org.eventb.core.prHyps="p5,p3,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p23">
+                                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R500"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="administrators" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        <org.eventb.core.prIdent name="current_user" org.eventb.core.type="USER"/>
+        <org.eventb.core.prIdent name="dentists" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="logged_in" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        <org.eventb.core.prIdent name="password" org.eventb.core.type="PASSWORD"/>
+        <org.eventb.core.prIdent name="patients" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.prIdent name="user_password_relations" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.prIdent name="users" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="checked_in_appointments∩completed_appointments=(∅ ⦂ ℙ(APPOINTMENT))"/>
+        <org.eventb.core.prPred name="p24" org.eventb.core.predicate="user_password_relations{user ↦ password}∈administrators∪dentists∪patients∪{user} → PASSWORD"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="dentists∩patients=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="user∉patients∪dentists∪administrators"/>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="password∈PASSWORD"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬user∈patients∪dentists∪administrators"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="booked_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="appointments=booked_appointments∪checked_in_appointments∪completed_appointments∪missed_appointments"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="booked_appointments∩completed_appointments=(∅ ⦂ ℙ(APPOINTMENT))"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="users=administrators∪dentists∪patients"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="current_user∈administrators"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="partition(appointments,booked_appointments,checked_in_appointments,completed_appointments,missed_appointments)"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="administrators∩patients=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="checked_in_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="registered_nhsnumbers⊆NHS_NUMBER">
+            <org.eventb.core.prIdent name="NHS_NUMBER" org.eventb.core.type="ℙ(NHS_NUMBER)"/>
+            <org.eventb.core.prIdent name="registered_nhsnumbers" org.eventb.core.type="ℙ(NHS_NUMBER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="booked_appointments∩checked_in_appointments=(∅ ⦂ ℙ(APPOINTMENT))"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="user_password_relations∈users → PASSWORD"/>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="user_password_relations∈administrators∪dentists∪patients → PASSWORD"/>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="users⊆USER"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(users,administrators,dentists,patients)"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="appointments⊆APPOINTMENT"/>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="completed_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="current_user∈logged_in"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="administrators∩dentists=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="user_password_relations{user ↦ password}∈users∪{user} → PASSWORD"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="registerDentist/inv28/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6" org.eventb.core.prSets="APPOINTMENT,PASSWORD,USER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(users,administrators,dentists,patients))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p7,p8,p9,p10"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p7,p8,p9,p10"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(appointments,booked_appointments,checked_in_appointments,completed_appointments,missed_appointments))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p11,p12,p13,p14,p15,p16,p17"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p11,p12,p13,p14,p15,p16,p17"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p18"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'">
+                                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p19"/>
+                                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p20"/>
+                                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p21"/>
+                                        <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p22"/>
+                                        <org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p23"/>
+                                        <org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p24"/>
+                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with users=administrators∪dentists∪patients" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p7">
+                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p27">
+                                                <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p6" org.eventb.core.prInfHyps="p25"/>
+                                                <org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p18" org.eventb.core.prInfHyps="p26"/>
+                                                <org.eventb.core.prHypAction name="DESELECT2" org.eventb.core.prHyps="p6,p18"/>
+                                                <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p27" org.eventb.core.prHyps="p5,p2,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p25,p26">
+                                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R500"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="administrators" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        <org.eventb.core.prIdent name="current_user" org.eventb.core.type="USER"/>
+        <org.eventb.core.prIdent name="dentists" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="logged_in" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        <org.eventb.core.prIdent name="password" org.eventb.core.type="PASSWORD"/>
+        <org.eventb.core.prIdent name="patients" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.prIdent name="user_password_relations" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.prIdent name="users" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="checked_in_appointments∩completed_appointments=(∅ ⦂ ℙ(APPOINTMENT))"/>
+        <org.eventb.core.prPred name="p27" org.eventb.core.predicate="user_password_relations{user ↦ password}∈administrators∪dentists∪patients∪{user} → PASSWORD"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="dentists∩patients=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p24" org.eventb.core.predicate="password∈PASSWORD"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="user∉users"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="booked_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))"/>
+        <org.eventb.core.prPred name="p26" org.eventb.core.predicate="¬user∈administrators∪dentists∪patients"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="appointments=booked_appointments∪checked_in_appointments∪completed_appointments∪missed_appointments"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="booked_appointments∩completed_appointments=(∅ ⦂ ℙ(APPOINTMENT))"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="users=administrators∪dentists∪patients"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="current_user∈administrators"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="partition(appointments,booked_appointments,checked_in_appointments,completed_appointments,missed_appointments)"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="administrators∩patients=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="checked_in_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="registered_nhsnumbers⊆NHS_NUMBER">
+            <org.eventb.core.prIdent name="NHS_NUMBER" org.eventb.core.type="ℙ(NHS_NUMBER)"/>
+            <org.eventb.core.prIdent name="registered_nhsnumbers" org.eventb.core.type="ℙ(NHS_NUMBER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="booked_appointments∩checked_in_appointments=(∅ ⦂ ℙ(APPOINTMENT))"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="user_password_relations∈users → PASSWORD"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬user∈users"/>
+        <org.eventb.core.prPred name="p25" org.eventb.core.predicate="user_password_relations∈administrators∪dentists∪patients → PASSWORD"/>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="users⊆USER"/>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="user∈USER"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(users,administrators,dentists,patients)"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="appointments⊆APPOINTMENT"/>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="completed_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="current_user∈logged_in"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="administrators∩dentists=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="qualified_treatments⊆TREATMENT_TYPE">
+            <org.eventb.core.prIdent name="TREATMENT_TYPE" org.eventb.core.type="ℙ(TREATMENT_TYPE)"/>
+            <org.eventb.core.prIdent name="qualified_treatments" org.eventb.core.type="ℙ(TREATMENT_TYPE)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="user_password_relations{user ↦ password}∈users∪{user} → PASSWORD"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="registerPatient/inv28/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6" org.eventb.core.prSets="APPOINTMENT,NHS_NUMBER,PASSWORD,USER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(users,administrators,dentists,patients))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p7,p8,p9,p10"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p7,p8,p9,p10"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(appointments,booked_appointments,checked_in_appointments,completed_appointments,missed_appointments))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p11,p12,p13,p14,p15,p16,p17"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p11,p12,p13,p14,p15,p16,p17"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p18"/>
+                                <org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p19"/>
+                                <org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p5" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p20"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'">
+                                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p21"/>
+                                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p22"/>
+                                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p23"/>
+                                        <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p24"/>
+                                        <org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p25"/>
+                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with users=administrators∪dentists∪patients" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p7">
+                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p27">
+                                                <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p6" org.eventb.core.prInfHyps="p26"/>
+                                                <org.eventb.core.prHypAction name="DESELECT1" org.eventb.core.prHyps="p6"/>
+                                                <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p27" org.eventb.core.prHyps="p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p26">
+                                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R500"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="administrators" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        <org.eventb.core.prIdent name="dentists" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        <org.eventb.core.prIdent name="nhs_number" org.eventb.core.type="NHS_NUMBER"/>
+        <org.eventb.core.prIdent name="password" org.eventb.core.type="PASSWORD"/>
+        <org.eventb.core.prIdent name="patients" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="registered_nhsnumbers" org.eventb.core.type="ℙ(NHS_NUMBER)"/>
+        <org.eventb.core.prIdent name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.prIdent name="user_password_relations" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.prIdent name="users" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="checked_in_appointments∩completed_appointments=(∅ ⦂ ℙ(APPOINTMENT))"/>
+        <org.eventb.core.prPred name="p27" org.eventb.core.predicate="user_password_relations{user ↦ password}∈administrators∪dentists∪patients∪{user} → PASSWORD"/>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="¬administrators=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="dentists∩patients=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="user∉patients∪dentists∪administrators"/>
+        <org.eventb.core.prPred name="p25" org.eventb.core.predicate="password∈PASSWORD"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬user∈patients∪dentists∪administrators"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="nhs_number∉registered_nhsnumbers"/>
+        <org.eventb.core.prPred name="p24" org.eventb.core.predicate="nhs_number∈NHS_NUMBER"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="booked_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="appointments=booked_appointments∪checked_in_appointments∪completed_appointments∪missed_appointments"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="booked_appointments∩completed_appointments=(∅ ⦂ ℙ(APPOINTMENT))"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬nhs_number∈registered_nhsnumbers"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="users=administrators∪dentists∪patients"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="partition(appointments,booked_appointments,checked_in_appointments,completed_appointments,missed_appointments)"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="administrators∩patients=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="checked_in_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))"/>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="registered_nhsnumbers⊆NHS_NUMBER"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="administrators≠(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="booked_appointments∩checked_in_appointments=(∅ ⦂ ℙ(APPOINTMENT))"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="user_password_relations∈users → PASSWORD"/>
+        <org.eventb.core.prPred name="p26" org.eventb.core.predicate="user_password_relations∈administrators∪dentists∪patients → PASSWORD"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="users⊆USER"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(users,administrators,dentists,patients)"/>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="appointments⊆APPOINTMENT"/>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="completed_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="administrators∩dentists=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="user_password_relations{user ↦ password}∈users∪{user} → PASSWORD"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="trainDentist/dentist_treatments/EQL" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="TREATMENT_TYPE,USER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(users,administrators,dentists,patients))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p2,p3,p4,p5"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p2,p3,p4,p5"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(appointments,booked_appointments,checked_in_appointments,completed_appointments,missed_appointments))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p7,p8,p9,p10,p11,p12,p13"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p7,p8,p9,p10,p11,p12,p13"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p16">
+                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p14" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p15"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'">
+                                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p17"/>
+                                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p18"/>
+                                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p19"/>
+                                        <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p20"/>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="dentist" org.eventb.core.type="USER"/>
+        <org.eventb.core.prIdent name="dentist_treatments" org.eventb.core.type="ℙ(USER×TREATMENT_TYPE)"/>
+        <org.eventb.core.prIdent name="treatment" org.eventb.core.type="TREATMENT_TYPE"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="checked_in_appointments∩completed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="{dentist} × {treatment}⊆dentist_treatments"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="treatment∈TREATMENT_TYPE"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="dentists∩patients=(∅ ⦂ ℙ(USER))">
+            <org.eventb.core.prIdent name="dentists" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="patients" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="users⊆USER">
+            <org.eventb.core.prIdent name="users" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬treatment∈dentist_treatments[{dentist}]"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="booked_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="treatment∉dentist_treatments[{dentist}]"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(users,administrators,dentists,patients)">
+            <org.eventb.core.prIdent name="administrators" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="dentists" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="patients" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="users" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="appointments⊆APPOINTMENT">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="completed_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="appointments=booked_appointments∪checked_in_appointments∪completed_appointments∪missed_appointments">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="booked_appointments∩completed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="users=administrators∪dentists∪patients">
+            <org.eventb.core.prIdent name="administrators" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="dentists" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="patients" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="users" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="partition(appointments,booked_appointments,checked_in_appointments,completed_appointments,missed_appointments)">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="administrators∩dentists=(∅ ⦂ ℙ(USER))">
+            <org.eventb.core.prIdent name="administrators" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="dentists" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="administrators∩patients=(∅ ⦂ ℙ(USER))">
+            <org.eventb.core.prIdent name="administrators" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="patients" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="dentist_treatments∪({dentist} × {treatment})=dentist_treatments"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="checked_in_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="registered_nhsnumbers⊆NHS_NUMBER">
+            <org.eventb.core.prIdent name="NHS_NUMBER" org.eventb.core.type="ℙ(NHS_NUMBER)"/>
+            <org.eventb.core.prIdent name="registered_nhsnumbers" org.eventb.core.type="ℙ(NHS_NUMBER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="booked_appointments∩checked_in_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="Fire_Admin/inv28/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="PASSWORD,USER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(users,administrators,dentists,patients))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p2,p3,p4,p5"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p2,p3,p4,p5"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(appointments,booked_appointments,checked_in_appointments,completed_appointments,missed_appointments))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p7,p8,p9,p10,p11,p12,p13"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p7,p8,p9,p10,p11,p12,p13"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p14" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p15"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'">
+                                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p16"/>
+                                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p17"/>
+                                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p18"/>
+                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with users=administrators∪dentists∪patients" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2">
+                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p21">
+                                                <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p19" org.eventb.core.prInfHyps="p20"/>
+                                                <org.eventb.core.prHypAction name="DESELECT1" org.eventb.core.prHyps="p19"/>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="adminToFire" org.eventb.core.type="USER"/>
+        <org.eventb.core.prIdent name="administrators" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="dentists" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="patients" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="user_password_relations" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.prIdent name="users" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="checked_in_appointments∩completed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="user_password_relations∈administrators∪dentists∪patients → PASSWORD"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="dentists∩patients=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="users⊆USER"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="booked_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(users,administrators,dentists,patients)"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬adminToFire=admin">
+            <org.eventb.core.prIdent name="admin" org.eventb.core.type="USER"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="appointments⊆APPOINTMENT">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="completed_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="user_password_relations∈(administrators∪dentists∪patients) ∖ {adminToFire} → PASSWORD"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="appointments=booked_appointments∪checked_in_appointments∪completed_appointments∪missed_appointments">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="booked_appointments∩completed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="users=administrators∪dentists∪patients"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="partition(appointments,booked_appointments,checked_in_appointments,completed_appointments,missed_appointments)">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="adminToFire≠admin">
+            <org.eventb.core.prIdent name="admin" org.eventb.core.type="USER"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="administrators∩dentists=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="administrators∩patients=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="checked_in_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="registered_nhsnumbers⊆NHS_NUMBER">
+            <org.eventb.core.prIdent name="NHS_NUMBER" org.eventb.core.type="ℙ(NHS_NUMBER)"/>
+            <org.eventb.core.prIdent name="registered_nhsnumbers" org.eventb.core.type="ℙ(NHS_NUMBER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="booked_appointments∩checked_in_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="user_password_relations∈users ∖ {adminToFire} → PASSWORD"/>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="user_password_relations∈users → PASSWORD"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="Fire_Admin/users/EQL" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="USER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(users,administrators,dentists,patients))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p2,p3,p4,p5"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p2,p3,p4,p5"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(appointments,booked_appointments,checked_in_appointments,completed_appointments,missed_appointments))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p7,p8,p9,p10,p11,p12,p13"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p7,p8,p9,p10,p11,p12,p13"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p14" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p15"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'">
+                                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p16"/>
+                                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p17"/>
+                                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p18"/>
+                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with users=administrators∪dentists∪patients" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2">
+                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p19"/>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="adminToFire" org.eventb.core.type="USER"/>
+        <org.eventb.core.prIdent name="administrators" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="dentists" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="patients" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="users" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="checked_in_appointments∩completed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="dentists∩patients=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="users⊆USER"/>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="(administrators∪dentists∪patients) ∖ {adminToFire}=administrators∪dentists∪patients"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="booked_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(users,administrators,dentists,patients)"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬adminToFire=admin">
+            <org.eventb.core.prIdent name="admin" org.eventb.core.type="USER"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="appointments⊆APPOINTMENT">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="completed_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="appointments=booked_appointments∪checked_in_appointments∪completed_appointments∪missed_appointments">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="booked_appointments∩completed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="users=administrators∪dentists∪patients"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="partition(appointments,booked_appointments,checked_in_appointments,completed_appointments,missed_appointments)">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="adminToFire≠admin">
+            <org.eventb.core.prIdent name="admin" org.eventb.core.type="USER"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="administrators∩dentists=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="administrators∩patients=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="checked_in_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="registered_nhsnumbers⊆NHS_NUMBER">
+            <org.eventb.core.prIdent name="NHS_NUMBER" org.eventb.core.type="ℙ(NHS_NUMBER)"/>
+            <org.eventb.core.prIdent name="registered_nhsnumbers" org.eventb.core.type="ℙ(NHS_NUMBER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="booked_appointments∩checked_in_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="users ∖ {adminToFire}=users"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="Fire_Admin/administrators/EQL" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(users,administrators,dentists,patients))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p0" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p1,p2,p3,p4"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p1,p2,p3,p4"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(appointments,booked_appointments,checked_in_appointments,completed_appointments,missed_appointments))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p5" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p6,p7,p8,p9,p10,p11,p12"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p6,p7,p8,p9,p10,p11,p12"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p13" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p14"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'">
+                                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p15"/>
+                                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p16"/>
+                                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p17"/>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="checked_in_appointments∩completed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="dentists∩patients=(∅ ⦂ ℙ(USER))">
+            <org.eventb.core.prIdent name="USER" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="dentists" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="patients" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="users⊆USER">
+            <org.eventb.core.prIdent name="USER" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="users" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="booked_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(users,administrators,dentists,patients)">
+            <org.eventb.core.prIdent name="USER" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="administrators" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="dentists" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="patients" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="users" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="¬adminToFire=admin">
+            <org.eventb.core.prIdent name="USER" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="admin" org.eventb.core.type="USER"/>
+            <org.eventb.core.prIdent name="adminToFire" org.eventb.core.type="USER"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="appointments⊆APPOINTMENT">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="completed_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="appointments=booked_appointments∪checked_in_appointments∪completed_appointments∪missed_appointments">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="booked_appointments∩completed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="users=administrators∪dentists∪patients">
+            <org.eventb.core.prIdent name="USER" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="administrators" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="dentists" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="patients" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="users" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="partition(appointments,booked_appointments,checked_in_appointments,completed_appointments,missed_appointments)">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="adminToFire≠admin">
+            <org.eventb.core.prIdent name="USER" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="admin" org.eventb.core.type="USER"/>
+            <org.eventb.core.prIdent name="adminToFire" org.eventb.core.type="USER"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="administrators∩dentists=(∅ ⦂ ℙ(USER))">
+            <org.eventb.core.prIdent name="USER" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="administrators" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="dentists" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="administrators∩patients=(∅ ⦂ ℙ(USER))">
+            <org.eventb.core.prIdent name="USER" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="administrators" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="patients" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="checked_in_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="registered_nhsnumbers⊆NHS_NUMBER">
+            <org.eventb.core.prIdent name="NHS_NUMBER" org.eventb.core.type="ℙ(NHS_NUMBER)"/>
+            <org.eventb.core.prIdent name="registered_nhsnumbers" org.eventb.core.type="ℙ(NHS_NUMBER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="booked_appointments∩checked_in_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="fire_admin/inv28/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="PASSWORD,USER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(users,administrators,dentists,patients))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p2,p3,p4,p5"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p2,p3,p4,p5"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(appointments,booked_appointments,checked_in_appointments,completed_appointments,missed_appointments))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p7,p8,p9,p10,p11,p12,p13"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p7,p8,p9,p10,p11,p12,p13"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p14" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p15"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'">
+                                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p16"/>
+                                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p17"/>
+                                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p18"/>
+                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with users=administrators∪dentists∪patients" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2">
+                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p21">
+                                                <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p19" org.eventb.core.prInfHyps="p20"/>
+                                                <org.eventb.core.prHypAction name="DESELECT1" org.eventb.core.prHyps="p19"/>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="adminToFire" org.eventb.core.type="USER"/>
+        <org.eventb.core.prIdent name="administrators" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="dentists" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="patients" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="user_password_relations" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.prIdent name="users" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="checked_in_appointments∩completed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="user_password_relations∈administrators∪dentists∪patients → PASSWORD"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="dentists∩patients=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="users⊆USER"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="booked_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(users,administrators,dentists,patients)"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬adminToFire=admin">
+            <org.eventb.core.prIdent name="admin" org.eventb.core.type="USER"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="appointments⊆APPOINTMENT">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="completed_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="user_password_relations∈(administrators∪dentists∪patients) ∖ {adminToFire} → PASSWORD"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="appointments=booked_appointments∪checked_in_appointments∪completed_appointments∪missed_appointments">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="booked_appointments∩completed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="users=administrators∪dentists∪patients"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="partition(appointments,booked_appointments,checked_in_appointments,completed_appointments,missed_appointments)">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="completed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="adminToFire≠admin">
+            <org.eventb.core.prIdent name="admin" org.eventb.core.type="USER"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="administrators∩dentists=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="administrators∩patients=(∅ ⦂ ℙ(USER))"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="checked_in_appointments∩missed_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="missed_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="registered_nhsnumbers⊆NHS_NUMBER">
+            <org.eventb.core.prIdent name="NHS_NUMBER" org.eventb.core.type="ℙ(NHS_NUMBER)"/>
+            <org.eventb.core.prIdent name="registered_nhsnumbers" org.eventb.core.type="ℙ(NHS_NUMBER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="booked_appointments∩checked_in_appointments=(∅ ⦂ ℙ(APPOINTMENT))">
+            <org.eventb.core.prIdent name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="booked_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+            <org.eventb.core.prIdent name="checked_in_appointments" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="user_password_relations∈users ∖ {adminToFire} → PASSWORD"/>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="user_password_relations∈users → PASSWORD"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+    </org.eventb.core.prProof>
+</org.eventb.core.prFile>
